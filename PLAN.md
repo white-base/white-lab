@@ -2,7 +2,7 @@
 
 작성일: 2026-10-22
 
-상태: 회사 사이트 루트 도메인 정렬 및 최종 검증 진행 중
+상태: 게시 및 최종 검증 완료 · 공개 주소 https://bindmodel.com/
 
 ## 1. 목표와 작업 범위
 
@@ -236,7 +236,7 @@ white-lab/
 - Chrome에서 HTTPS 공개 페이지 접속, 회사·기술 소개, 저작권 등록 6행과 특허출원 카드 2개를 확인했다. 가로 넘침이 없었다.
 - 실제 공개 주소를 `index.html`의 canonical·Open Graph URL, `sitemap.xml`, README에 반영했다.
 
-초기에 예상한 `white-base.github.io/white-lab/` 대신 GitHub가 배포 결과로 제공한 `bindmodel.com/white-lab/`을 공식 안내 주소로 사용한다. 별도 서비스 하위 도메인의 운영 상태는 회사 사이트 게시 성공과 별개의 확인 항목으로 유지한다.
+첫 배포 당시에는 `bindmodel.com/white-lab/`으로 공개되었다. 이후 아래 12절의 사용자 도메인 설정에 따라 최종 공개 주소는 `https://bindmodel.com/`으로 확정되었다. 별도 서비스 하위 도메인의 운영 상태는 회사 사이트 게시 성공과 별개의 확인 항목으로 유지한다.
 
 ## 12. 회사 사이트 루트 도메인 반영 (2026-10-22)
 
@@ -247,5 +247,16 @@ white-lab/
 - [x] 추가된 `docs/CNAME`과 도메인 설정 보존 및 원격 변경 통합
 - [x] canonical·Open Graph·사이트맵을 `https://bindmodel.com/`으로 정렬
 - [x] 404의 홈·이미지·스타일 경로를 루트 기준으로 수정
-- [ ] 최종 변경 커밋·푸시 및 실제 루트 주소 파일 대조
-- [ ] 최종 공개 주소와 검증 결과 정리
+- [x] 최종 변경 커밋·푸시 및 실제 루트 주소 파일 대조
+- [x] 최종 공개 주소와 검증 결과 정리
+
+### 최종 게시 결과
+
+- 공개 사이트: <https://bindmodel.com/>
+- 사이트 최종 변경 커밋: `7a5eeed` — 원격 `main` 반영 완료.
+- [pages build and deployment #4](https://github.com/white-base/white-lab/actions/runs/39754254089) 성공, 실행 시간 45초.
+- HTTPS의 루트 HTML, CSS, JavaScript, 로고, 심볼, 사이트맵, 404 파일이 모두 HTTP 200을 반환하고 로컬 최종 파일과 바이트 단위로 일치했다.
+- 존재하지 않는 경로에서 HTTP 404와 회사 전용 안내 페이지를 반환하는 것을 확인했다.
+- Chrome에서 최종 대표 URL `https://bindmodel.com/`, 저작권 등록 6행, 특허출원 2개를 확인했다. 가로 넘침 및 콘솔 오류·경고가 없었다.
+- 공개 화면 이미지는 `/tmp/white-lab-qa-20261022/published.jpg`에 저장했다. 임시 로컬 미리보기 서버는 종료했다.
+- 이후 사이트 수정사항은 `main`의 `docs`에 반영하여 푸시하면 GitHub Pages에서 자동 게시된다.
