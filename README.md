@@ -1,1 +1,51 @@
 # white-lab
+
+주식회사 화이트연구소 회사 웹사이트입니다. 회사·보유 기술 소개를 중심으로 구성하며 GitHub Pages의 `/docs` 게시 방식을 사용합니다.
+
+- [제작 계획과 진행 상태](./PLAN.md)
+- [웹사이트 첫 페이지](./docs/index.html)
+- [로고 SVG](./docs/assets/logo.svg) · [심볼 SVG](./docs/assets/symbol.svg)
+
+## 로컬 미리보기
+
+별도 패키지 설치나 빌드가 필요하지 않습니다. 저장소 루트에서 실행합니다.
+
+```sh
+python3 -m http.server 8080 --bind 127.0.0.1 --directory docs
+```
+
+브라우저에서 <http://127.0.0.1:8080/>을 엽니다. 종료는 터미널에서 `Ctrl+C`를 누릅니다.
+
+## GitHub Pages 게시
+
+변경사항이 GitHub의 `main` 브랜치에 반영된 뒤 다음과 같이 설정합니다.
+
+1. 저장소의 **Settings → Pages**로 이동합니다.
+2. **Build and deployment → Source**에서 **Deploy from a branch**를 선택합니다.
+3. **Branch**는 `main`, 폴더는 `/docs`를 선택하고 저장합니다.
+4. GitHub가 표시하는 배포 완료 주소에서 확인합니다. 기본 주소는 `https://white-base.github.io/white-lab/` 형식입니다.
+
+게시 예정 주소는 <https://white-base.github.io/white-lab/>입니다. 별도 회사 도메인을 연결할 때는 GitHub Pages의 도메인 설정과 DNS 구성을 함께 진행하고, `index.html`의 대표 URL과 `sitemap.xml`, `404.html`의 `/white-lab/` 경로를 새 주소에 맞춰 수정합니다.
+
+## 수정 위치
+
+| 변경할 내용 | 파일 |
+| --- | --- |
+| 소개 문구, 서비스 URL, 회사 정보, 지식재산권, 연락처 | `docs/index.html` |
+| 색상, 레이아웃, 화면 크기별 스타일 | `docs/assets/styles.css` |
+| 메뉴, LOGIC 개념도 전환, 이메일 복사 | `docs/assets/main.js` |
+| 로고와 파비콘 | `docs/assets/logo.svg`, `docs/assets/symbol.svg` |
+| 페이지를 찾을 수 없을 때의 안내 | `docs/404.html` |
+| 검색엔진용 사이트맵 | `docs/sitemap.xml` |
+
+상단 주메뉴와 본문 서비스 링크는 `https://fw.bindmodel.com/`, `https://logic.bindmodel.com/`으로 연결합니다. 링크는 새 탭에서 열립니다.
+
+색상은 `styles.css` 상단의 CSS 변수에서 관리합니다. 명판의 파란색·흰색과 명함의 올리브색을 참고한 웹용 팔레트입니다. 로고는 교체 가능한 초안입니다.
+
+모든 화면 구성 파일은 저장소 하위 경로에서도 열리도록 상대 경로를 사용합니다. 외부 폰트·CDN·분석 도구·백엔드에 의존하지 않으며, JavaScript 없이도 소개 내용과 연락 링크를 볼 수 있습니다. LOGIC 도식은 기술을 설명하는 개념 예시입니다.
+
+## 지식재산권 소개
+
+제공된 증서를 기준으로 프로그램 저작권 등록 6건과 특허출원 2건의 명칭·번호·날짜를 반영했습니다. 저작권은 증서의 등록일, 특허는 출원일을 표시합니다. 특허 카드의 한글 제목은 기술 주제의 요약이며, 펼치면 증명원에 기재된 영문 출원 명칭을 확인할 수 있습니다.
+
+서류에 기재된 저작자·출원인은 김영호이며, 사이트에도 해당 기준을 표시했습니다. 원본 증서에 포함된 개인 식별정보와 연락처는 게시 파일에 포함하지 않았습니다. 원본 PDF는 `docs`에 복사하지 않았습니다. 이후 등록 또는 명의 변경 시 해당 서류를 확인하고 소개 내용을 갱신합니다.
