@@ -3,6 +3,7 @@
 주식회사 화이트연구소 회사 웹사이트입니다. 회사·보유 기술 소개를 중심으로 구성하며 GitHub Pages의 `/docs` 게시 방식을 사용합니다.
 
 - [제작 계획과 진행 상태](./PLAN.md)
+- [공개 웹사이트](https://bindmodel.com/white-lab/)
 - [웹사이트 첫 페이지](./docs/index.html)
 - [로고 SVG](./docs/assets/logo.svg) · [심볼 SVG](./docs/assets/symbol.svg)
 
@@ -18,14 +19,14 @@ python3 -m http.server 8080 --bind 127.0.0.1 --directory docs
 
 ## GitHub Pages 게시
 
-변경사항이 GitHub의 `main` 브랜치에 반영된 뒤 다음과 같이 설정합니다.
+현재 게시 소스는 `main` 브랜치의 `/docs`입니다. 수정사항을 `main`에 푸시하면 GitHub Pages가 자동으로 게시합니다. 게시 설정을 다시 구성할 때는 다음과 같이 설정합니다.
 
 1. 저장소의 **Settings → Pages**로 이동합니다.
 2. **Build and deployment → Source**에서 **Deploy from a branch**를 선택합니다.
 3. **Branch**는 `main`, 폴더는 `/docs`를 선택하고 저장합니다.
-4. GitHub가 표시하는 배포 완료 주소에서 확인합니다. 기본 주소는 `https://white-base.github.io/white-lab/` 형식입니다.
+4. GitHub Actions에서 `pages build and deployment` 성공을 확인한 뒤 <https://bindmodel.com/white-lab/>에서 확인합니다.
 
-게시 예정 주소는 <https://white-base.github.io/white-lab/>입니다. 별도 회사 도메인을 연결할 때는 GitHub Pages의 도메인 설정과 DNS 구성을 함께 진행하고, `index.html`의 대표 URL과 `sitemap.xml`, `404.html`의 `/white-lab/` 경로를 새 주소에 맞춰 수정합니다.
+GitHub 계정에 기존 연결된 `bindmodel.com`을 상속하므로 공개 주소는 <https://bindmodel.com/white-lab/>입니다. `Enforce HTTPS`를 적용했습니다. 별도 회사 도메인을 연결할 때는 GitHub Pages의 도메인 설정과 DNS 구성을 함께 진행하고, `index.html`의 대표 URL과 `sitemap.xml`, `404.html`의 `/white-lab/` 경로를 새 주소에 맞춰 수정합니다.
 
 ## 수정 위치
 

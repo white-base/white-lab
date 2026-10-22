@@ -2,7 +2,7 @@
 
 작성일: 2026-10-22
 
-상태: GitHub Pages 게시 진행 중 · 서비스 하위 도메인 확인 별도
+상태: GitHub Pages 게시 및 공개 페이지 확인 완료 · 서비스 하위 도메인 확인 별도
 
 ## 1. 목표와 작업 범위
 
@@ -162,7 +162,7 @@ white-lab/
 - [ ] `fw.bindmodel.com`의 프레임워크 서비스 화면 확인
 - [ ] `logic.bindmodel.com`의 DNS 연결과 서비스 접속 확인
 - [ ] 로고·문구에 대한 사용자 검토
-- [ ] 초안 확정 후 커밋·푸시 및 GitHub Pages의 `main /docs` 게시 설정
+- [x] 초안 확정 후 커밋·푸시 및 GitHub Pages의 `main /docs` 게시 설정
 
 서비스 도메인과 실제 게시 설정을 제외한 로컬 초안 작업은 완료했다.
 
@@ -215,13 +215,25 @@ white-lab/
 - [x] GitHub Pages 설정 확인: 현재 비활성화, 게시 방식은 `Deploy from a branch`
 - [x] 원격 `main`의 최신 상태와 로컬 변경 범위 확인
 - [x] 공개 주소의 검색·공유 메타데이터 및 잘못된 경로 안내 마무리
-- [ ] 최종 정적 파일 확인 후 사이트 파일과 계획서·README 커밋 및 푸시
-- [ ] GitHub Pages 게시 소스를 `main /docs`로 설정
-- [ ] 배포 결과와 실제 공개 페이지의 회사 정보·기술 소개·지식재산권 확인
-- [ ] 공개 주소와 게시 결과를 문서에 기록하여 전달
+- [x] 최종 정적 파일 확인 후 사이트 파일과 계획서·README 커밋 및 푸시
+- [x] GitHub Pages 게시 소스를 `main /docs`로 설정
+- [x] 배포 결과와 실제 공개 페이지의 회사 정보·기술 소개·지식재산권 확인
+- [x] 공개 주소와 게시 결과를 문서에 기록하여 전달
 
 서비스 링크 `fw.bindmodel.com`, `logic.bindmodel.com`의 별도 운영·DNS 설정은 이번 회사 사이트 게시와 구분한다. 기존에 요청받은 링크를 유지하며 해당 서비스 서버나 DNS는 변경하지 않는다.
 
 원격 `main`과 작업 시작 시 로컬 HEAD는 모두 `c7d9c059fc265f0f3829ac2f6915888234ab1736`으로 일치했다. 공개 예정 주소를 대표 URL과 Open Graph URL, 사이트맵에 반영하고 GitHub Pages의 잘못된 경로에 표시할 `404.html`을 추가했다.
 
 게시 전 정적 경로·앵커, 사이트맵 XML, SVG, 대표 URL과 지식재산권 건수를 다시 확인했다. 추가한 404 안내는 PC 및 390px 모바일에서 정상 표시되고 가로 넘침이 없었으며, 홈으로 돌아가는 경로가 `/white-lab/`인 것을 확인했다.
+
+### 게시 결과
+
+- 사이트 구현 커밋: `d2453270e2e9bf4a6b3f01338f3ed950caca48df` — 원격 `main`에 푸시 완료.
+- GitHub Pages 소스: `Deploy from a branch` → `main /docs` 저장 완료.
+- HTTPS: `Enforce HTTPS` 적용 확인.
+- 첫 배포: [pages build and deployment #1](https://github.com/white-base/white-lab/actions/runs/39752921523) 성공, 실행 시간 30초.
+- 실제 공개 주소: <https://bindmodel.com/white-lab/>. 계정에 기존 연결된 사용자 페이지 도메인을 상속한 주소이며, 회사 사이트용 신규 DNS나 별도 도메인은 만들지 않았다.
+- Chrome에서 HTTPS 공개 페이지 접속, 회사·기술 소개, 저작권 등록 6행과 특허출원 카드 2개를 확인했다. 가로 넘침이 없었다.
+- 실제 공개 주소를 `index.html`의 canonical·Open Graph URL, `sitemap.xml`, README에 반영했다.
+
+초기에 예상한 `white-base.github.io/white-lab/` 대신 GitHub가 배포 결과로 제공한 `bindmodel.com/white-lab/`을 공식 안내 주소로 사용한다. 별도 서비스 하위 도메인의 운영 상태는 회사 사이트 게시 성공과 별개의 확인 항목으로 유지한다.
