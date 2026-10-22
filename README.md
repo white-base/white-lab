@@ -3,7 +3,7 @@
 주식회사 화이트연구소 회사 웹사이트입니다. 회사·보유 기술 소개를 중심으로 구성하며 GitHub Pages의 `/docs` 게시 방식을 사용합니다.
 
 - [제작 계획과 진행 상태](./PLAN.md)
-- [공개 웹사이트](https://bindmodel.com/white-lab/)
+- [공개 웹사이트](https://bindmodel.com/)
 - [웹사이트 첫 페이지](./docs/index.html)
 - [로고 SVG](./docs/assets/logo.svg) · [심볼 SVG](./docs/assets/symbol.svg)
 
@@ -24,9 +24,9 @@ python3 -m http.server 8080 --bind 127.0.0.1 --directory docs
 1. 저장소의 **Settings → Pages**로 이동합니다.
 2. **Build and deployment → Source**에서 **Deploy from a branch**를 선택합니다.
 3. **Branch**는 `main`, 폴더는 `/docs`를 선택하고 저장합니다.
-4. GitHub Actions에서 `pages build and deployment` 성공을 확인한 뒤 <https://bindmodel.com/white-lab/>에서 확인합니다.
+4. GitHub Actions에서 `pages build and deployment` 성공을 확인한 뒤 <https://bindmodel.com/>에서 확인합니다.
 
-GitHub 계정에 기존 연결된 `bindmodel.com`을 상속하므로 공개 주소는 <https://bindmodel.com/white-lab/>입니다. `Enforce HTTPS`를 적용했습니다. 별도 회사 도메인을 연결할 때는 GitHub Pages의 도메인 설정과 DNS 구성을 함께 진행하고, `index.html`의 대표 URL과 `sitemap.xml`, `404.html`의 `/white-lab/` 경로를 새 주소에 맞춰 수정합니다.
+이 저장소의 사용자 도메인은 `bindmodel.com`이며 `docs/CNAME`에 기록되어 있습니다. 공개 주소는 <https://bindmodel.com/>이고 `Enforce HTTPS`를 적용했습니다. 도메인을 변경할 때는 GitHub Pages 설정과 DNS 구성을 함께 진행하고, `index.html`의 대표 URL과 `sitemap.xml`도 수정합니다. 저장소 하위 경로로 게시 방식을 바꾸는 경우 `404.html`의 루트 기준 경로도 해당 경로에 맞춰 수정합니다.
 
 ## 수정 위치
 
@@ -38,6 +38,7 @@ GitHub 계정에 기존 연결된 `bindmodel.com`을 상속하므로 공개 주�
 | 로고와 파비콘 | `docs/assets/logo.svg`, `docs/assets/symbol.svg` |
 | 페이지를 찾을 수 없을 때의 안내 | `docs/404.html` |
 | 검색엔진용 사이트맵 | `docs/sitemap.xml` |
+| GitHub Pages 사용자 도메인 | `docs/CNAME` |
 
 상단 주메뉴와 본문 서비스 링크는 `https://fw.bindmodel.com/`, `https://logic.bindmodel.com/`으로 연결합니다. 링크는 새 탭에서 열립니다.
 

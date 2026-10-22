@@ -2,7 +2,7 @@
 
 작성일: 2026-10-22
 
-상태: GitHub Pages 게시 및 공개 페이지 확인 완료 · 서비스 하위 도메인 확인 별도
+상태: 회사 사이트 루트 도메인 정렬 및 최종 검증 진행 중
 
 ## 1. 목표와 작업 범위
 
@@ -237,3 +237,15 @@ white-lab/
 - 실제 공개 주소를 `index.html`의 canonical·Open Graph URL, `sitemap.xml`, README에 반영했다.
 
 초기에 예상한 `white-base.github.io/white-lab/` 대신 GitHub가 배포 결과로 제공한 `bindmodel.com/white-lab/`을 공식 안내 주소로 사용한다. 별도 서비스 하위 도메인의 운영 상태는 회사 사이트 게시 성공과 별개의 확인 항목으로 유지한다.
+
+## 12. 회사 사이트 루트 도메인 반영 (2026-10-22)
+
+게시 도중 GitHub 설정에 `bindmodel.com`이 이 프로젝트의 사용자 도메인으로 지정되고, 원격에 `f90aa30 Create CNAME` 커밋이 추가되었다. 이 설정은 그대로 보존하고 원격 변경을 fast-forward로 반영했다. GitHub Pages가 표시하는 공개 주소 및 Chrome에서 확인한 회사 사이트 주소는 이제 `https://bindmodel.com/`이다.
+
+기존 `/white-lab/` 주소의 404는 이 도메인 변경에 따른 경로 차이였다. 루트 주소에서는 회사 소개, 저작권 등록 6건, 특허출원 2건이 정상 표시되는 것을 확인했다.
+
+- [x] 추가된 `docs/CNAME`과 도메인 설정 보존 및 원격 변경 통합
+- [x] canonical·Open Graph·사이트맵을 `https://bindmodel.com/`으로 정렬
+- [x] 404의 홈·이미지·스타일 경로를 루트 기준으로 수정
+- [ ] 최종 변경 커밋·푸시 및 실제 루트 주소 파일 대조
+- [ ] 최종 공개 주소와 검증 결과 정리
