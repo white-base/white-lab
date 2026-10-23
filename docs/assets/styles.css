@@ -193,8 +193,7 @@ button:focus-visible, a:focus-visible, summary:focus-visible { outline: 3px soli
 .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--olive); box-shadow: 0 0 0 4px var(--status-halo); margin-right: 3px; }
 h1 { margin-top: 30px; font-size: clamp(44px, 4.65vw, 68px); font-weight: 750; line-height: 1.22; letter-spacing: -3.7px; }
 h1 > span { color: var(--blue); }
-.hero-description { margin-top: 28px; color: var(--muted); font-size: 16px; line-height: 1.9; letter-spacing: -.4px; }
-.mobile-break { display: none; }
+.hero-description { max-width: 520px; margin-top: 28px; color: var(--muted); font-size: 16px; line-height: 1.9; letter-spacing: -.4px; }
 .hero-actions { display: flex; align-items: center; gap: 26px; margin-top: 32px; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 26px; padding: 15px 22px; border: 1px solid transparent; border-radius: 4px; font-size: 13px; font-weight: 650; transition: background .2s, transform .2s; }
 .button:hover { transform: translateY(-2px); }
@@ -299,31 +298,54 @@ h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.35; letter-spacing: -1.
 .concept-label { display: block; margin-top: 8px; color: var(--olive-ink); font-size: 9px; text-align: center; }
 
 .approach { border-bottom: 1px solid var(--line); }
-.principles { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 60px; }
-.principle { position: relative; padding: 0 36px 0 0; }
-.principle + .principle { padding-left: 36px; border-left: 1px solid var(--line); }
-.principle:last-child { padding-right: 0; }
-.principle-top { display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
-.principle-top svg { width: 41px; height: 41px; fill: none; stroke: var(--blue); stroke-width: 1.5; }
-.principle h3 { margin-top: 27px; font-size: 21px; font-weight: 650; letter-spacing: -.6px; }
-.principle p { max-width: 320px; margin-top: 13px; color: var(--muted); font-size: 13px; line-height: 1.95; }
-.principle-word { display: block; margin-top: 32px; color: var(--muted); font-size: 9px; font-weight: 600; letter-spacing: 1.5px; }
+.section-intro { max-width: 870px; color: var(--muted); font-size: 14px; line-height: 2; }
+.stage-badge { display: inline-block; flex-shrink: 0; padding: 5px 10px; border: 1px solid var(--diagram-node-line); border-radius: 3px; color: var(--blue-dark); background: var(--registered-bg); font-size: 11px; font-weight: 650; line-height: 1.5; }
+.stage-badge-direction { color: var(--olive-ink); background: var(--olive-light); border-color: var(--olive-line); }
+.capability-status { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 24px; color: var(--muted); font-size: 11px; }
+.product .capability-status + h3 { margin-top: 18px; }
+.product-value { max-width: 420px; margin-bottom: 22px; color: var(--text-secondary); font-size: 13px; line-height: 1.95; }
+.product-value strong { display: block; margin-bottom: 6px; color: var(--ink); font-size: 12px; }
+.product-scope { max-width: 420px; margin-bottom: 24px; padding-left: 13px; border-left: 2px solid var(--olive-line); color: var(--muted); font-size: 11px; line-height: 1.9; }
+.reuse-workflow { margin-top: 34px; }
+.reuse-workflow figcaption { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; color: var(--muted); font-size: 12px; }
+.workflow-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; padding: 0; margin: 24px 0 0; list-style: none; }
+.workflow-steps li { position: relative; min-width: 0; padding: 26px 20px; background: var(--paper); border-top: 2px solid var(--blue); }
+.workflow-steps li:last-child { background: var(--diagram-olive-bg); border-color: var(--olive); }
+.workflow-steps li:not(:last-child)::after { position: absolute; z-index: 1; right: -20px; top: 50%; color: var(--blue); content: "→"; font-size: 20px; line-height: 1; transform: translateY(-50%); }
+.workflow-index { display: block; color: var(--muted); font-size: 9px; font-weight: 600; letter-spacing: .5px; }
+.workflow-steps strong { display: block; margin-top: 20px; font-size: 19px; font-weight: 650; letter-spacing: -.6px; }
+.workflow-steps p { margin-top: 12px; color: var(--muted); font-size: 12px; line-height: 1.9; }
+.module-context { display: grid; grid-template-columns: 1fr 1.6fr; gap: 36px; margin-top: 35px; padding-top: 28px; border-top: 1px solid var(--line); }
+.module-context h3 { font-size: 17px; font-weight: 650; letter-spacing: -.5px; }
+.module-context p { color: var(--muted); font-size: 13px; line-height: 1.95; }
 
 .about { background: var(--about-bg); }
-.about-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 100px; }
+.about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: start; }
 .about h2 { margin-top: 27px; }
-.about-copy > p:not(.eyebrow) { max-width: 420px; margin-top: 23px; color: var(--muted); font-size: 13px; line-height: 1.95; }
+.about-copy > p:not(.eyebrow) { max-width: 580px; margin-top: 23px; color: var(--muted); font-size: 14px; line-height: 2; }
 .about-copy > p + p:not(.eyebrow) { margin-top: 13px; }
 .about-signature { display: flex; align-items: center; gap: 12px; margin-top: 35px; font-size: 16px; font-weight: 650; letter-spacing: -.3px; }
 .small-cross { color: var(--blue); font-size: 32px; line-height: 1; }
 .about-signature > span:last-child { margin-left: 4px; color: var(--muted); font-size: 9px; font-weight: 400; letter-spacing: .6px; }
-.company-facts { border-top: 2px solid var(--ink); }
-.company-facts > div { display: grid; grid-template-columns: 115px 1fr; gap: 15px; padding: 23px 0; border-bottom: 1px solid var(--line); }
-.company-facts dt { color: var(--muted); font-size: 12px; }
-.company-facts dd { font-size: 13px; font-weight: 500; }
-.address-detail { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; font-weight: 400; }
+.philosophy-note { margin-top: 42px; padding: 32px; border-top: 2px solid var(--blue); background: var(--surface); }
+.note-label { color: var(--blue); font-size: 9px; font-weight: 650; letter-spacing: 1.6px; }
+.philosophy-note h3 { margin-top: 24px; font-size: 30px; font-weight: 650; line-height: 1.5; letter-spacing: -1px; }
+.philosophy-note > p:not(.note-label) { margin-top: 18px; color: var(--muted); font-size: 13px; line-height: 1.95; }
+.philosophy-values { display: grid; gap: 13px; padding: 22px 0 0; margin: 26px 0 0; border-top: 1px solid var(--line); list-style: none; }
+.philosophy-values li { display: flex; flex-wrap: wrap; gap: 5px 16px; align-items: baseline; font-size: 12px; }
+.philosophy-values strong { font-weight: 650; }
+.philosophy-values span { color: var(--muted); }
 
-.intellectual-property { border-top: 1px solid var(--line); }
+.technology-records { padding-top: 48px; scroll-margin-top: 24px; }
+.research-details { padding-inline: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: 5px; }
+.research-details > summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 24px; cursor: pointer; list-style: none; }
+.research-details > summary::-webkit-details-marker { display: none; }
+.records-eyebrow { display: block; color: var(--blue); font-size: 9px; font-weight: 650; letter-spacing: 1px; }
+.records-title { display: block; margin-top: 9px; font-size: 20px; font-weight: 650; letter-spacing: -.5px; }
+.records-caption { display: block; margin-top: 6px; color: var(--muted); font-size: 11px; }
+.records-toggle { flex-shrink: 0; color: var(--blue); font-size: 28px; font-weight: 400; line-height: 1; transition: transform .2s; }
+.research-details[open] .records-toggle { transform: rotate(45deg); }
+.records-content { padding-block: 8px 28px; }
 .ip-totals { display: grid; grid-template-columns: 1fr 1fr 1.1fr; gap: 36px; align-items: center; padding: 34px 0; margin-bottom: 60px; border-block: 1px solid var(--line); }
 .ip-total + .ip-total { padding-left: 36px; border-left: 1px solid var(--line); }
 .ip-total-label { color: var(--muted); font-size: 9px; font-weight: 600; letter-spacing: 1.2px; }
@@ -365,6 +387,27 @@ h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.35; letter-spacing: -1.
 .patent-details[open] summary > span { transform: rotate(45deg); }
 .patent-details p { padding-bottom: 24px; color: var(--olive-ink); font-size: 11px; line-height: 1.85; overflow-wrap: anywhere; word-break: normal; }
 .ip-source-note { margin-top: 24px; color: var(--muted); font-size: 11px; line-height: 1.9; }
+
+.ecosystem-grid, .responsibility-grid { display: grid; grid-template-columns: 1fr 1.15fr; align-items: start; gap: 80px; }
+.ecosystem-copy > .capability-status { margin-top: 0; margin-bottom: 24px; }
+.ecosystem-copy > p:not(.capability-status), .responsibility-copy > p { color: var(--muted); font-size: 14px; line-height: 2; }
+.ecosystem-copy > p + p:not(.capability-status) { margin-top: 18px; }
+.direction-note { margin-top: 30px; padding: 21px 24px; background: var(--diagram-olive-bg); border-left: 2px solid var(--olive); }
+.direction-note > strong { color: var(--olive-strong); font-size: 12px; font-weight: 650; }
+.direction-note p { margin-top: 9px; color: var(--olive-ink); font-size: 12px; line-height: 1.95; }
+.module-information { padding: 30px 32px; background: var(--paper); border-top: 2px solid var(--blue); }
+.module-information h3 { margin-bottom: 24px; font-size: 20px; letter-spacing: -.5px; }
+.information-list > div { padding-block: 17px; border-top: 1px solid var(--line); }
+.information-list > div:last-child { padding-bottom: 0; }
+.information-list dt { display: flex; align-items: baseline; gap: 16px; font-size: 14px; font-weight: 650; }
+.information-list dt span { flex-shrink: 0; color: var(--blue-dark); font-size: 10px; font-weight: 500; }
+.information-list dd { margin: 7px 0 0 30px; color: var(--muted); font-size: 12px; line-height: 1.85; }
+.responsibility { background: var(--about-bg); border-top: 1px solid var(--line); }
+.responsibility-list { margin: 0; padding: 0; border-top: 2px solid var(--blue); list-style: none; }
+.responsibility-list li { display: flex; gap: 22px; padding-block: 23px; border-bottom: 1px solid var(--line); }
+.responsibility-index { padding-top: 3px; flex-shrink: 0; color: var(--blue-dark); font-size: 11px; }
+.responsibility-list h3 { font-size: 16px; font-weight: 650; letter-spacing: -.3px; }
+.responsibility-list p { margin-top: 9px; color: var(--muted); font-size: 13px; line-height: 1.95; }
 
 .contact { position: relative; color: #fff; background: var(--contact-bg); overflow: hidden; }
 .contact::after { position: absolute; top: -210px; right: -170px; width: 550px; height: 550px; border: 1px solid #ffffff1f; border-radius: 50%; content: ""; pointer-events: none; }
@@ -429,8 +472,11 @@ h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.35; letter-spacing: -1.
   .bindmodel-visual, .logic-visual { padding: 25px 23px; }
   .product h3 { font-size: 43px; }
   .product-lead { font-size: 22px; }
-  .about-grid { gap: 60px; }
-  .company-facts > div { grid-template-columns: 100px 1fr; }
+  .about-grid, .ecosystem-grid, .responsibility-grid { gap: 44px; }
+  .workflow-steps { gap: 20px; }
+  .workflow-steps li { padding-inline: 15px; }
+  .workflow-steps li:not(:last-child)::after { right: -18px; }
+  .workflow-steps strong { font-size: 17px; }
 }
 
 @media (max-width: 900px) {
@@ -472,14 +518,20 @@ h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.35; letter-spacing: -1.
   .binding-command strong { font-size: 18px; }
   .assembly-node { padding-inline: 12px; }
   .module-row { gap: 10px; }
-  .principle { padding-right: 24px; }
-  .principle + .principle { padding-left: 24px; }
-  .principle h3 { font-size: 19px; }
-  .principle p { font-size: 12px; }
-  .about-grid { gap: 35px; }
-  .company-facts > div { grid-template-columns: 82px 1fr; gap: 10px; }
-  .company-facts dt { font-size: 11px; }
-  .company-facts dd { font-size: 12px; }
+  .about-grid, .ecosystem-grid, .responsibility-grid { gap: 32px; }
+  .philosophy-note { padding: 25px; }
+  .philosophy-note h3 { font-size: 25px; }
+  .workflow-steps { grid-template-columns: 1fr; gap: 22px; }
+  .workflow-steps li { display: grid; grid-template-columns: 155px 1fr; align-items: center; gap: 7px 20px; padding: 20px 24px; }
+  .workflow-index { grid-column: 1; }
+  .workflow-steps strong { grid-column: 1; margin: 0; font-size: 19px; }
+  .workflow-steps p { grid-column: 2; grid-row: 1 / 3; margin: 0; }
+  .workflow-steps p br { display: none; }
+  .workflow-steps li:not(:last-child)::after { right: auto; left: 40px; top: auto; bottom: -21px; content: "↓"; transform: none; }
+  .module-context { grid-template-columns: 1fr; gap: 12px; }
+  .module-information { padding: 25px; }
+  .product-value { font-size: 12px; }
+  .product-scope { font-size: 11px; }
   .ip-totals { gap: 24px; }
   .ip-total + .ip-total { padding-left: 24px; }
   .ip-total > div { align-items: flex-start; flex-direction: column; gap: 12px; }
@@ -547,21 +599,33 @@ h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.35; letter-spacing: -1.
   .assembly-node { padding: 15px 17px; }
   .diagram-description { min-height: 40px; font-size: 10px; }
   .concept-label { margin-top: 7px; font-size: 8px; }
-  .principles { grid-template-columns: 1fr; margin-top: 35px; }
-  .principle, .principle + .principle { padding: 0 0 25px; border-left: 0; }
-  .principle + .principle { padding-top: 25px; border-top: 1px solid var(--line); }
-  .principle:last-child { padding-bottom: 0; }
-  .principle-top svg { width: 35px; height: 35px; }
-  .principle h3 { margin-top: 14px; font-size: 20px; }
-  .principle p { max-width: 100%; margin-top: 10px; font-size: 12px; }
-  .principle-word { margin-top: 18px; font-size: 8px; }
-  .about-grid { grid-template-columns: 1fr; gap: 38px; }
+  .about-grid, .ecosystem-grid, .responsibility-grid { grid-template-columns: 1fr; gap: 32px; }
+  .philosophy-note { margin-top: 0; }
+  .about-copy > p:not(.eyebrow), .section-intro, .ecosystem-copy > p:not(.capability-status), .responsibility-copy > p { font-size: 13px; }
+  .reuse-workflow figcaption { align-items: flex-start; gap: 10px; font-size: 11px; }
+  .workflow-steps li { grid-template-columns: 120px 1fr; gap: 6px 12px; padding: 20px 18px; }
+  .workflow-index { font-size: 8px; letter-spacing: 0; }
+  .workflow-steps strong { font-size: 17px; }
+  .workflow-steps p { font-size: 11px; }
+  .module-context h3 { font-size: 16px; }
+  .module-context p { font-size: 12px; }
+  .capability-status { gap: 8px; font-size: 10px; }
+  .stage-badge { font-size: 10px; }
+  .product-value { margin-bottom: 20px; font-size: 12px; }
+  .technology-records { padding-top: 28px; }
+  .research-details { padding-inline: 20px; }
+  .records-title { font-size: 18px; }
+  .records-caption { font-size: 10px; }
+  .module-information { padding: 25px 23px; }
+  .information-list dt { gap: 12px; font-size: 13px; }
+  .information-list dd { margin-left: 26px; font-size: 11px; }
+  .responsibility-list li { gap: 17px; padding-block: 21px; }
+  .responsibility-list h3 { font-size: 15px; }
+  .responsibility-list p { font-size: 12px; }
+  .direction-note { margin-top: 24px; padding: 19px 21px; }
   .about h2 { margin-top: 20px; }
-  .about-copy > p:not(.eyebrow) { max-width: 100%; margin-top: 20px; font-size: 12px; }
+  .about-copy > p:not(.eyebrow) { max-width: 100%; margin-top: 20px; font-size: 13px; }
   .about-signature { margin-top: 26px; }
-  .company-facts > div { grid-template-columns: 103px 1fr; padding-block: 19px; }
-  .company-facts dt { font-size: 11px; }
-  .company-facts dd { font-size: 12px; }
   .ip-totals { grid-template-columns: 1fr 1fr; gap: 20px; padding-block: 24px; margin-bottom: 36px; }
   .ip-total + .ip-total { padding-left: 20px; }
   .ip-total-label { font-size: 8px; letter-spacing: .7px; }
@@ -627,11 +691,9 @@ h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.35; letter-spacing: -1.
   .hero-actions { gap: 17px; }
   .button { padding-inline: 13px; gap: 12px; }
   .text-link { font-size: 10px; gap: 6px; }
-  .mobile-break { display: inline; }
   .product-copy { padding-inline: 20px; }
   .bindmodel-visual, .logic-visual { padding-inline: 18px; }
   .visual-label { font-size: 7px; }
-  .company-facts > div { grid-template-columns: 90px 1fr; }
   .contact-email { font-size: 22px; }
   .contact-location { display: none; }
 }
@@ -692,7 +754,7 @@ h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.35; letter-spacing: -1.
   .header-actions, .primary-nav, .hero-actions, .hero-bottom, .back-top, .copy-email, .diagram-switch { display: none !important; }
   .container { width: 100%; }
   .section-space { padding-block: 32px; }
-  .product, .principle, .company-facts, .copyright-table tr, .patent-record { break-inside: avoid; }
+  .product, .workflow-steps li, .responsibility-list li, .copyright-table tr, .patent-record { break-inside: avoid; }
   .contact { color: var(--ink); background: var(--surface); border-block: 1px solid var(--line); }
   .contact .eyebrow, .contact .section-number, .contact-description, .contact-phone > span, .contact-location { color: var(--muted); }
   .contact-email { font-size: 36px; border-color: var(--line); }
