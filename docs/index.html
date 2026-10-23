@@ -15,6 +15,7 @@
   <link rel="canonical" href="https://bindmodel.com/">
   <link rel="sitemap" type="application/xml" href="./sitemap.xml">
   <link rel="icon" href="./assets/symbol.svg" type="image/svg+xml">
+  <script src="./assets/theme.js"></script>
   <link rel="stylesheet" href="./assets/styles.css">
   <script src="./assets/main.js" defer></script>
 </head>
@@ -23,11 +24,18 @@
   <header class="site-header">
     <div class="header-inner container">
       <a class="brand" href="#" aria-label="화이트연구소 첫 화면">
-        <img src="./assets/logo.svg" alt="White Lab · 주식회사 화이트연구소" width="224" height="60">
+        <img class="logo-light" src="./assets/logo.svg" alt="White Lab · 주식회사 화이트연구소" width="224" height="60">
+        <img class="logo-dark" src="./assets/logo-dark.svg" alt="White Lab · 주식회사 화이트연구소" width="224" height="60">
       </a>
-      <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" hidden>
-        <span class="menu-label">메뉴 열기</span><span class="menu-bars" aria-hidden="true"></span>
-      </button>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-label="다크 모드" aria-pressed="false" title="다크 모드로 전환" hidden>
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+        </button>
+        <button class="menu-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" hidden>
+          <span class="menu-label">메뉴 열기</span><span class="menu-bars" aria-hidden="true"></span>
+        </button>
+      </div>
       <nav class="primary-nav" id="primary-nav" aria-label="주메뉴">
         <a href="#about">회사 소개</a>
         <a href="#intellectual-property">지식재산권</a>
@@ -55,31 +63,31 @@
           <title id="art-title">화면과 데이터를 연결하는 모듈 조립 개념도</title>
           <desc id="art-desc">UI 모듈과 데이터 모듈이 중앙의 LOGIC을 거쳐 하나의 애플리케이션으로 연결됩니다.</desc>
           <defs>
-            <pattern id="dot-grid" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#cbd9df"/></pattern>
+            <pattern id="dot-grid" width="22" height="22" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="var(--art-grid)"/></pattern>
           </defs>
           <rect x="8" y="8" width="524" height="420" fill="url(#dot-grid)"/>
-          <g fill="none" stroke="#9db8c5" stroke-width="1.5">
+          <g fill="none" stroke="var(--art-wire)" stroke-width="1.5">
             <path d="M129 170v40h141v41M411 170v40H270"/>
             <path d="M270 331v44h150"/>
-            <path d="M8 25V8h17m490 0h17v17M8 411v17h17m490 0h17v-17" stroke="#7598a8"/>
+            <path d="M8 25V8h17m490 0h17v17M8 411v17h17m490 0h17v-17" stroke="var(--art-corner)"/>
           </g>
-          <g class="art-flow" fill="#007eaf"><circle cx="199" cy="210" r="3.5"/><circle cx="341" cy="210" r="3.5"/><circle cx="346" cy="375" r="3.5"/></g>
+          <g class="art-flow" fill="var(--blue)"><circle cx="199" cy="210" r="3.5"/><circle cx="341" cy="210" r="3.5"/><circle cx="346" cy="375" r="3.5"/></g>
           <g class="art-module art-module-ui">
-            <path d="m46 84 18-13h164l-18 13z" fill="#f3f8fa" stroke="#9ab6c3"/>
-            <path d="m210 84 18-13v85l-18 14z" fill="#dce9ee" stroke="#9ab6c3"/>
-            <rect x="46" y="84" width="164" height="86" rx="2" fill="#fff" stroke="#9ab6c3"/>
-            <rect x="61" y="100" width="24" height="19" rx="3" fill="#e4f1f6"/>
-            <path d="M66 106h14m-14 6h8" stroke="#007eaf" stroke-width="2"/>
-            <text x="61" y="145" fill="#173746" font-size="16" font-weight="700">UI MODULE</text>
-            <circle cx="193" cy="101" r="3" fill="#acba4c"/>
+            <path d="m46 84 18-13h164l-18 13z" fill="var(--art-node-top)" stroke="var(--art-node-line)"/>
+            <path d="m210 84 18-13v85l-18 14z" fill="var(--art-node-side)" stroke="var(--art-node-line)"/>
+            <rect x="46" y="84" width="164" height="86" rx="2" fill="var(--surface)" stroke="var(--art-node-line)"/>
+            <rect x="61" y="100" width="24" height="19" rx="3" fill="var(--art-icon-bg)"/>
+            <path d="M66 106h14m-14 6h8" stroke="var(--blue)" stroke-width="2"/>
+            <text x="61" y="145" fill="var(--art-ink)" font-size="16" font-weight="700">UI MODULE</text>
+            <circle cx="193" cy="101" r="3" fill="var(--olive)"/>
           </g>
           <g class="art-module art-module-data">
-            <path d="m328 84 18-13h164l-18 13z" fill="#f3f8fa" stroke="#9ab6c3"/>
-            <path d="m492 84 18-13v85l-18 14z" fill="#dce9ee" stroke="#9ab6c3"/>
-            <rect x="328" y="84" width="164" height="86" rx="2" fill="#fff" stroke="#9ab6c3"/>
-            <g fill="none" stroke="#007eaf" stroke-width="1.5"><ellipse cx="354" cy="104" rx="10" ry="4"/><path d="M344 104v12c0 5 20 5 20 0v-12m-20 6c0 5 20 5 20 0"/></g>
-            <text x="343" y="145" fill="#173746" font-size="16" font-weight="700">DB MODULE</text>
-            <circle cx="475" cy="101" r="3" fill="#acba4c"/>
+            <path d="m328 84 18-13h164l-18 13z" fill="var(--art-node-top)" stroke="var(--art-node-line)"/>
+            <path d="m492 84 18-13v85l-18 14z" fill="var(--art-node-side)" stroke="var(--art-node-line)"/>
+            <rect x="328" y="84" width="164" height="86" rx="2" fill="var(--surface)" stroke="var(--art-node-line)"/>
+            <g fill="none" stroke="var(--blue)" stroke-width="1.5"><ellipse cx="354" cy="104" rx="10" ry="4"/><path d="M344 104v12c0 5 20 5 20 0v-12m-20 6c0 5 20 5 20 0"/></g>
+            <text x="343" y="145" fill="var(--art-ink)" font-size="16" font-weight="700">DB MODULE</text>
+            <circle cx="475" cy="101" r="3" fill="var(--olive)"/>
           </g>
           <g class="art-module art-module-logic">
             <path d="m178 248 22-16h184l-22 16z" fill="#2296bf" stroke="#006d99"/>
@@ -88,9 +96,9 @@
             <text x="197" y="273" fill="#d2edf7" font-size="10" letter-spacing="2">CONNECT &amp; ASSEMBLE</text>
             <text x="196" y="311" fill="#fff" font-size="34" font-weight="700" letter-spacing="-1">LOGIC<tspan font-size="26" fill="#d3dd8c"> ↗</tspan></text>
           </g>
-          <g fill="#566f7e" font-size="10" letter-spacing="1.6"><text x="48" y="58">INTERFACE</text><text x="329" y="58">DATA &amp; SCHEMA</text><text x="47" y="284">expect</text><text x="47" y="300">↔ provide</text></g>
-          <rect x="420" y="359" width="90" height="32" rx="16" fill="#e9edce"/>
-          <text x="465" y="379" text-anchor="middle" fill="#56632a" font-size="10" font-weight="700" letter-spacing="1">APPLICATION</text>
+          <g fill="var(--diagram-label)" font-size="10" letter-spacing="1.6"><text x="48" y="58">INTERFACE</text><text x="329" y="58">DATA &amp; SCHEMA</text><text x="47" y="284">expect</text><text x="47" y="300">↔ provide</text></g>
+          <rect x="420" y="359" width="90" height="32" rx="16" fill="var(--olive-light)"/>
+          <text x="465" y="379" text-anchor="middle" fill="var(--olive-ink)" font-size="10" font-weight="700" letter-spacing="1">APPLICATION</text>
         </svg>
         <figcaption><span class="figure-caption">각자의 역할이, 하나의 가능성으로.</span><span class="figure-note">모듈 연결 개념도</span></figcaption>
       </figure>
@@ -235,7 +243,7 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container"><div class="footer-top"><a href="#" class="footer-brand" aria-label="화이트연구소 첫 화면"><img src="./assets/logo.svg" alt="White Lab · 주식회사 화이트연구소" width="224" height="60" loading="lazy"></a><p>연결에서 시작하는 소프트웨어의 새로운 가능성.</p><a class="back-top" href="#">맨 위로 <span aria-hidden="true">↑</span></a></div><div class="footer-details"><span>주식회사 화이트연구소</span><span>대표 김영호</span><span>사업자등록번호 414-86-04039</span></div><address>전북특별자치도 전주시 완산구 배학4길 46-8, 101호(효자동3가)<br><a href="tel:+82639208113">063-920-8113</a><span class="footer-separator" aria-hidden="true">/</span><a href="mailto:logicfeel@nate.com">logicfeel@nate.com</a></address><div class="footer-bottom"><small>© <span id="copyright-year">2026</span> White Lab, Inc. All rights reserved.</small><span>DESIGNED TO CONNECT.</span></div></div>
+    <div class="container"><div class="footer-top"><a href="#" class="footer-brand" aria-label="화이트연구소 첫 화면"><img class="logo-light" src="./assets/logo.svg" alt="White Lab · 주식회사 화이트연구소" width="224" height="60" loading="lazy"><img class="logo-dark" src="./assets/logo-dark.svg" alt="White Lab · 주식회사 화이트연구소" width="224" height="60" loading="lazy"></a><p>연결에서 시작하는 소프트웨어의 새로운 가능성.</p><a class="back-top" href="#">맨 위로 <span aria-hidden="true">↑</span></a></div><div class="footer-details"><span>주식회사 화이트연구소</span><span>대표 김영호</span><span>사업자등록번호 414-86-04039</span></div><address>전북특별자치도 전주시 완산구 배학4길 46-8, 101호(효자동3가)<br><a href="tel:+82639208113">063-920-8113</a><span class="footer-separator" aria-hidden="true">/</span><a href="mailto:logicfeel@nate.com">logicfeel@nate.com</a></address><div class="footer-bottom"><small>© <span id="copyright-year">2026</span> White Lab, Inc. All rights reserved.</small><span>DESIGNED TO CONNECT.</span></div></div>
   </footer>
 </body>
 </html>

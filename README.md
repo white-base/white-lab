@@ -35,7 +35,8 @@ python3 -m http.server 8080 --bind 127.0.0.1 --directory docs
 | 소개 문구, 서비스 URL, 회사 정보, 지식재산권, 연락처 | `docs/index.html` |
 | 색상, 레이아웃, 화면 크기별 스타일 | `docs/assets/styles.css` |
 | 메뉴, LOGIC 개념도 전환, 이메일 복사 | `docs/assets/main.js` |
-| 로고와 파비콘 | `docs/assets/logo.svg`, `docs/assets/symbol.svg` |
+| 테마 초기 적용, 전환, 선택 저장 | `docs/assets/theme.js` |
+| 라이트·다크 로고와 파비콘 | `docs/assets/logo.svg`, `docs/assets/logo-dark.svg`, `docs/assets/symbol.svg` |
 | 페이지를 찾을 수 없을 때의 안내 | `docs/404.html` |
 | 검색엔진용 사이트맵 | `docs/sitemap.xml` |
 | GitHub Pages 사용자 도메인 | `docs/CNAME` |
@@ -43,6 +44,8 @@ python3 -m http.server 8080 --bind 127.0.0.1 --directory docs
 상단 주메뉴와 본문 서비스 링크는 `https://fw.bindmodel.com/`, `https://logic.bindmodel.com/`으로 연결합니다. 링크는 새 탭에서 열립니다.
 
 색상은 `styles.css` 상단의 CSS 변수에서 관리합니다. 명판의 파란색·흰색과 명함의 올리브색을 참고한 웹용 팔레트입니다. 로고는 교체 가능한 초안입니다.
+
+상단의 달·해 아이콘 버튼으로 라이트·다크 모드를 전환합니다. 첫 방문에는 기기의 테마 설정을 따르고, 직접 선택한 모드는 브라우저에 저장하여 다음 방문과 404 페이지에서도 유지합니다. 저장소 접근이 제한된 브라우저에서도 현재 페이지의 전환은 동작합니다. JavaScript를 끈 경우에는 기기의 테마를 따르며, 인쇄할 때는 밝은 팔레트를 사용합니다. 다크 팔레트는 `:root[data-theme="dark"]`와 JavaScript 없는 환경의 미디어 쿼리에서 함께 관리합니다.
 
 모든 화면 구성 파일은 저장소 하위 경로에서도 열리도록 상대 경로를 사용합니다. 외부 폰트·CDN·분석 도구·백엔드에 의존하지 않으며, JavaScript 없이도 소개 내용과 연락 링크를 볼 수 있습니다. LOGIC 도식은 기술을 설명하는 개념 예시입니다.
 

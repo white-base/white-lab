@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="224" height="60" viewBox="0 0 224 60" fill="none">
+  <title>White Lab · 화이트연구소</title>
+  <g transform="translate(0 -2)">
+    <path d="m10 17 9 30 11-22 11 22 9-30" stroke="#63c7ef" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="m10 17 9 30 11-22 11 22 9-30" stroke="#101a22" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="68" y="30" fill="#e8f0f5" font-family="Arial Rounded MT Bold,Arial,Helvetica,sans-serif" font-size="25" font-weight="800" letter-spacing="-.8">White Lab<tspan fill="#63c7ef">.</tspan></text>
+  <text x="69" y="47" fill="#a3b5c0" font-family="Apple SD Gothic Neo,Malgun Gothic,sans-serif" font-size="10.5" font-weight="600" letter-spacing="1.5">주식회사 화이트연구소</text>
+</svg>
