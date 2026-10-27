@@ -77,7 +77,7 @@
     if (slides.length < 2 || !controls || !previous || !next || !playToggle) continue;
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const interval = 6000;
+    const interval = 4000;
     let active = 0;
     let paused = false;
     let hovered = false;
