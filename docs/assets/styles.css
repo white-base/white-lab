@@ -469,6 +469,25 @@ h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.35; letter-spacing: -1.
 .copy-email:hover { text-decoration: underline; text-underline-offset: 4px; }
 .copy-email svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.1; }
 
+.partnerships { padding-block: 72px 80px; background: var(--paper); border-bottom: 1px solid var(--line); }
+.partnerships-heading h2 { margin-top: 16px; font-size: clamp(24px, 3vw, 32px); line-height: 1.45; letter-spacing: -1px; }
+.partnership-groups { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 36px; margin-top: 36px; }
+.partnership-group { min-width: 0; }
+.partnership-group h3 { display: flex; align-items: baseline; gap: 10px; padding-bottom: 15px; border-bottom: 1px solid var(--line); font-size: 15px; font-weight: 650; }
+.partnership-group h3 > span { color: var(--muted); font-size: 9px; font-weight: 500; letter-spacing: 1.2px; }
+.partner-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 20px 0 0; padding: 0; list-style: none; }
+.partner-list-mou { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.partner-list li { min-width: 0; }
+.partner-link { display: flex; flex-direction: column; height: 100%; border-radius: 4px; }
+.partner-logo { display: flex; align-items: center; justify-content: center; height: 116px; padding: 22px; background: #fff; border: 1px solid var(--line); border-radius: 4px; transition: border-color .2s; }
+.partner-logo img { width: auto; height: auto; max-width: 100%; max-height: 72px; object-fit: contain; }
+.partner-name { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-top: 16px; font-size: 14px; font-weight: 650; line-height: 1.5; }
+.partner-arrow { color: var(--muted); font-size: 16px; font-weight: 400; transition: color .2s; }
+.partner-description { margin-top: 5px; color: var(--text-secondary); font-size: 11px; }
+.partner-domain { margin-top: 6px; color: var(--muted); font-size: 10px; overflow-wrap: anywhere; word-break: normal; }
+.partner-link:hover .partner-logo, .partner-link:focus-visible .partner-logo { border-color: var(--blue); }
+.partner-link:hover .partner-arrow, .partner-link:focus-visible .partner-arrow { color: var(--blue); }
+
 .site-footer { padding: 46px 0 25px; background: var(--surface); }
 .footer-top { display: flex; align-items: center; gap: 30px; margin-bottom: 30px; }
 .footer-brand img { width: 184px; height: auto; }
@@ -593,6 +612,10 @@ h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.35; letter-spacing: -1.
   .patent-record h4 { font-size: 20px; }
   .footer-top p { display: none; }
   .back-top { margin-left: auto; }
+}
+
+@media (min-width: 681px) and (max-width: 1000px) {
+  .partnership-groups { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 680px) {
@@ -735,6 +758,14 @@ h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.35; letter-spacing: -1.
   .contact-phone > span { display: block; margin-bottom: 5px; font-size: 10px; }
   .contact-phone > a { font-size: 17px; }
   .copy-email { font-size: 10px; gap: 7px; padding-block: 12px; }
+  .partnerships { padding-block: 48px 52px; }
+  .partnerships-heading .eyebrow { font-size: 9px; letter-spacing: 1.2px; }
+  .partnerships-heading h2 { max-width: 260px; font-size: 26px; }
+  .partnership-groups { grid-template-columns: 1fr; gap: 32px; margin-top: 28px; }
+  .partner-list, .partner-list-mou { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; margin-top: 16px; }
+  .partner-logo { height: 104px; padding: 18px; }
+  .partner-logo img { max-height: 66px; }
+  .partner-name { margin-top: 12px; font-size: 13px; }
   .site-footer { padding-top: 30px; }
   .footer-top { margin-bottom: 24px; }
   .footer-brand img { width: 165px; }
